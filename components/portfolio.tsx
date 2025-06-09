@@ -24,6 +24,15 @@ export default function Portfolio() {
       category: "fintech",
     },
     {
+      title: "ANATOLINGO",
+      description:
+        "Plataforma educativa interactiva para aprender anatomía humana de forma divertida. Sistema gamificado con módulos de aprendizaje, ranking de usuarios y desafíos diarios.",
+      image: "/images/anatolingo.png",
+      tags: ["React", "Next.js", "Gamification", "E-learning"],
+      liveUrl: "https://v0-anatolingo.vercel.app/",
+      category: "education",
+    },
+    {
       title: "BELLA PIZZA",
       description:
         "Auténtica experiencia pizza italiana. Sitio web corporativo con diseño gastronómico profesional, sistema de pedidos online, reservas de mesa y promociones especiales.",
@@ -44,30 +53,22 @@ export default function Portfolio() {
     {
       title: "PLANSAT",
       description:
-        "Aplicación web para planificación satelital con interfaces avanzadas y visualización de datos en tiempo real.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["Next.js", "TypeScript", "PostgreSQL", "D3.js"],
-      liveUrl: "#",
+        "Monitoreo y Análisis de Impacto de incendios Forestales. PLANSAT proporciona herramientas avanzadas para el análisis de vegetación afectada por incendios forestales en la región de Ñuble, Chile.",
+      image: "/images/plansat.png",
+      tags: ["Next.js", "TypeScript", "Geospatial Analysis", "Environmental Tech"],
+      liveUrl: "https://v0-plansat-git-primeramaqueta-robs-projects-1ebc061f.vercel.app/",
       category: "app",
-    },
-    {
-      title: "ECOLOGÍA UV",
-      description: "Portal educativo sobre ecología con contenido interactivo y herramientas de aprendizaje.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["React", "Firebase", "Tailwind", "PWA"],
-      liveUrl: "#",
-      category: "education",
     },
   ]
 
   const getCategoryColor = (category: string) => {
     const colors = {
       web: "bg-palette-cyan",
-      app: "bg-palette-teal",
+      app: "bg-emerald-500",
       restaurant: "bg-orange-500",
       corporate: "bg-blue-500",
       fintech: "bg-green-500",
-      education: "bg-palette-teal",
+      education: "bg-purple-500",
       enterprise: "bg-palette-cyan",
     }
     return colors[category as keyof typeof colors] || "bg-palette-cyan"
