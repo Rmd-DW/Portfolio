@@ -6,35 +6,32 @@ export interface ContactFormData {
 
 export async function submitContactForm(data: ContactFormData) {
   try {
-    const subject = encodeURIComponent(`Mensaje desde portafolio - ${data.name}`)
-    const body = encodeURIComponent(`
-Hola Roberto,
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
 
-Tienes un nuevo mensaje desde tu portafolio web:
+    const result = await response.json()
 
-Nombre: ${data.name}
-Email: ${data.email}
-
-Mensaje:
-${data.message}
-
----
-Enviado desde tu portafolio web
-Responde directamente a este email para contactar al cliente.
-    `)
-
-    const mailtoLink = `mailto:r.munizaga.d@gmail.com?subject=${subject}&body=${body}`
-    window.open(mailtoLink, "_blank")
+    if (!response.ok) {
+      return {
+        success: false,
+        error: result.error || "Error al enviar el mensaje. Por favor, intenta nuevamente.",
+      }
+    }
 
     return {
       success: true,
-      message: "Abriendo tu cliente de email para enviar el mensaje directamente...",
+      message: result.message || "¡Mensaje enviado exitosamente!",
     }
   } catch (error) {
-    console.error("Error with email method:", error)
+    console.error("Error submitting contact form:", error)
     return {
       success: false,
-      error: "Error al abrir el cliente de email. Por favor, envía un email manualmente a r.munizaga.d@gmail.com",
+      error: "Error de conexión. Por favor, escríbeme directamente a r.munizaga.d@gmail.com",
     }
   }
 }

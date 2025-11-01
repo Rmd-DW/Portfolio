@@ -25,17 +25,16 @@ export default function Footer() {
     <footer className="bg-palette-black border-t border-palette-medium-gray/20">
       <div className="container mx-auto px-4">
         {/* Main Footer Content */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center py-8 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center py-6 md:py-8 gap-6">
           {/* Left Side - Logo and Title */}
           <div className="flex flex-col">
-            <h3 className="text-2xl font-bold text-white mb-2">RM</h3>
-            <p className="text-palette-medium-gray text-sm">Diseñador UX/UI / Desarrollo front end</p>
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-2">RM</h3>
+            <p className="text-palette-medium-gray text-xs md:text-sm">Diseñador UX/UI / Desarrollo front end</p>
           </div>
 
-          {/* Right Side - Navigation and Back to Top */}
-          <div className="flex items-center gap-8">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 w-full md:w-auto">
             {/* Navigation Links */}
-            <nav className="flex items-center gap-6">
+            <nav className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 md:gap-6">
               {navItems.map((item, index) => (
                 <button
                   key={index}
@@ -62,12 +61,14 @@ export default function Footer() {
         <div className="border-t border-palette-medium-gray/20"></div>
 
         {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center py-6 gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-center py-4 md:py-6 gap-3 md:gap-4">
           {/* Copyright */}
-          <p className="text-palette-medium-gray text-sm">© 2025 Roberto Munizaga. Todos los derechos reservados.</p>
+          <p className="text-palette-medium-gray text-xs md:text-sm text-center md:text-left">
+            © 2025 Roberto Munizaga. Todos los derechos reservados.
+          </p>
 
           {/* Tagline */}
-          <p className="text-palette-medium-gray text-sm text-center md:text-right">
+          <p className="text-palette-medium-gray text-xs md:text-sm text-center md:text-right">
             Diseñado y desarrollado con pasión por la innovación y la tecnología
           </p>
         </div>

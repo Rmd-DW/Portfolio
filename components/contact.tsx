@@ -27,7 +27,7 @@ export default function Contact() {
     setSubmitMessage("")
 
     try {
-      const result = submitContactForm(formData)
+      const result = await submitContactForm(formData)
 
       if (result.success) {
         setSubmitStatus("success")
@@ -53,21 +53,24 @@ export default function Contact() {
   }
 
   return (
-    <section className="py-20 section-gradient">
+    <section className="py-12 md:py-20 section-gradient">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-glow slide-up">Trabajemos Juntos</h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto slide-up" style={{ animationDelay: "0.2s" }}>
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-glow slide-up">Trabajemos Juntos</h2>
+          <p
+            className="text-base md:text-xl text-gray-300 max-w-2xl mx-auto slide-up px-4"
+            style={{ animationDelay: "0.2s" }}
+          >
             ¿Tienes un proyecto en mente? Me encantaría escuchar tus ideas y ayudarte a hacerlas realidad.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
           {/* Contact Form */}
           <div className="slide-in-left">
             <Card className="bg-palette-black/60 border-palette-medium-gray/30 rounded-2xl card-hover">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-8 text-white">Enviar un mensaje</h3>
+              <CardContent className="p-6 md:p-8">
+                <h3 className="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-white">Enviar un mensaje</h3>
 
                 {submitStatus === "success" && (
                   <div className="mb-6 p-4 bg-green-500/20 border border-green-500/30 rounded-lg flex items-center gap-3">
@@ -83,7 +86,7 @@ export default function Contact() {
                   </div>
                 )}
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                   <div className="space-y-2">
                     <label className="block text-sm font-medium text-palette-light-gray">Tu Nombre</label>
                     <Input
@@ -143,10 +146,10 @@ export default function Contact() {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-6 slide-in-right">
+          <div className="space-y-4 md:space-y-6 slide-in-right">
             <Card className="bg-palette-black/60 border-palette-medium-gray/30 rounded-2xl card-hover">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-8 text-white">Información de Contacto</h3>
+              <CardContent className="p-6 md:p-8">
+                <h3 className="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-white">Información de Contacto</h3>
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4 interactive-element group">
                     <div className="w-12 h-12 bg-palette-cyan/20 rounded-lg flex items-center justify-center group-hover:bg-palette-cyan/30 transition-colors duration-300">
@@ -186,8 +189,8 @@ export default function Contact() {
             </Card>
 
             <Card className="bg-palette-black/60 border-palette-medium-gray/30 rounded-2xl card-hover">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-6 text-white">Sígueme</h3>
+              <CardContent className="p-6 md:p-8">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-white">Sígueme</h3>
                 <div className="flex space-x-4">
                   <a
                     href="https://www.linkedin.com/in/rob-ux/"
@@ -210,9 +213,9 @@ export default function Contact() {
             </Card>
 
             <Card className="bg-palette-black/60 border-palette-medium-gray/30 rounded-2xl card-hover">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4 text-white">Vamos a crear algo increíble</h3>
-                <p className="text-palette-light-gray mb-6 leading-relaxed">
+              <CardContent className="p-6 md:p-8">
+                <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-white">Vamos a crear algo increíble</h3>
+                <p className="text-sm md:text-base text-palette-light-gray mb-4 md:mb-6 leading-relaxed">
                   Disponible para proyectos independientes y oportunidades de tiempo completo.
                 </p>
                 <CVDownload />

@@ -18,7 +18,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-20 section-gradient">
+    <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-20 px-4 section-gradient">
       {/* Animated geometric background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div
@@ -54,21 +54,21 @@ export default function Hero() {
           alt="Logo Background"
           width={300}
           height={300}
-          className="w-72 h-72 rotate-on-hover"
+          className="w-48 h-48 md:w-72 md:h-72 rotate-on-hover"
         />
       </div>
 
-      <div className="container mx-auto px-4 text-center z-10">
+      <div className="container mx-auto text-center z-10">
         <div className="max-w-4xl mx-auto">
           <p
-            className={`text-lg md:text-xl mb-8 text-gray-300 font-light transition-all duration-1000 ${isVisible ? "slide-in-left" : "opacity-0"}`}
+            className={`text-base md:text-lg lg:text-xl mb-6 md:mb-8 text-gray-300 font-light transition-all duration-1000 ${isVisible ? "slide-in-left" : "opacity-0"}`}
           >
             Diseñador ux/ui | Desarrollador Front end
           </p>
 
           <h1
-            className={`font-bold mb-12 leading-tight transition-all duration-1200 ${isVisible ? "slide-up" : "opacity-0"}`}
-            style={{ fontSize: "28px", animationDelay: "0.3s" }}
+            className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-8 md:mb-12 leading-tight transition-all duration-1200 ${isVisible ? "slide-up" : "opacity-0"}`}
+            style={{ animationDelay: "0.3s" }}
           >
             <span className="text-white">Hola! mi nombre es </span>
             <span className="text-palette-cyan pulse-glow">Roberto Munizaga</span>
@@ -90,10 +90,10 @@ export default function Hero() {
       </div>
 
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-center">
-        <p className="text-gray-400 text-sm mb-4 fade-in" style={{ animationDelay: "1s" }}>
+        <p className="text-gray-400 text-xs md:text-sm mb-4 fade-in" style={{ animationDelay: "1s" }}>
           Scroll Down
         </p>
-        <ChevronDown className="w-6 h-6 text-gray-400 mx-auto float" style={{ animationDelay: "1.2s" }} />
+        <ChevronDown className="w-5 h-5 md:w-6 md:h-6 text-gray-400 mx-auto float" style={{ animationDelay: "1.2s" }} />
       </div>
     </section>
   )
